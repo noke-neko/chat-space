@@ -5,7 +5,7 @@ This was created during my time as a student in TECH CAMP
 
 
 Database
-## usersテーブル
+## users table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -19,7 +19,7 @@ Database
 - has_many :groups_users
 - has_many :messages
 
-## groupsテーブル
+## groups table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -31,7 +31,7 @@ Database
 - has_many :groups_users
 - has_many :messages
 
-## messageテーブル
+## message table
 
 |Column|Type|Options|
 |------|----|-------|
@@ -45,7 +45,7 @@ Database
 - belongs_to :user
 - belongs_to :group
 
-## groups_usersテーブル
+## groups_users table
 
 |Column|Type|Options|
 |------|----|-------|
