@@ -10,12 +10,13 @@ Database
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false|
-|user_name|string|null: false, unique: true|
+|user_name|string|index: true, null: false, unique: true|
 |e-mail|string|null: false, unique: true|
 |password|string|null: false|
 
 ### Association
 - has_many :groups, through: :groups_users
+- has_many :groups_users
 - has_many :messages
 
 ## groupsテーブル
@@ -27,6 +28,7 @@ Database
 
 ### Association
 - has_many :users, through: :groups_users
+- has_many :groups_users
 - has_many :messages
 
 ## messageテーブル
