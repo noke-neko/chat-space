@@ -9,8 +9,7 @@ Database
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
-|user_name|string|index: true, null: false, unique: true|
+|name|string|index: true, null: false, unique: true|
 |e-mail|string|null: false, unique: true|
 |password|string|null: false|
 
@@ -23,8 +22,7 @@ Database
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false|
-|group_name|string|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :users, through: :groups_users
@@ -35,7 +33,6 @@ Database
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
 |body|text||
 |image|string||
 |group_id|integer|null:false, foreign_key: true|
