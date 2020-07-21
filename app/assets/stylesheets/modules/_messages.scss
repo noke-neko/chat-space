@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
+//ベーステキストカラー
+$white-color: #ffffff;
+
+//カラー、フォント指定
+@mixin color-size($color, $font-size) {
+  color: $color;
+  font-size: $font-size;
+}
+
+// 全体
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+//サイドバー
+.side-bar { 
+  width: 300px;
+  font-weight: bold;
+  &__user-name {
+    background-color: #253141;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .top-items { 
+      background-color: #253141;
+      height: 20px;
+      width: 260px;
+      display: flex;
+      justify-content: space-between;
+      &__name {  //ユーザー名
+        @include color-size($white-color, 16px);
+      }
+      &__icons {  //グループ作成、アカウント編集ボタン
+        width: 60px;
+        display: flex;
+        justify-content: flex-end;
+      }
+      &__btn--left { //グループ作成ボタン
+        margin-right: 5px;
+        color: $white-color;
+      }
+      &__btn--right { //アカウント編集ボタン
+        color: $white-color;
+      }
+    }
+  }
+  &__group-lists {
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+    .group-list {
+      height: 91px;
+      padding: 20px 20px 0px 20px;
+      &__name {
+        margin-bottom: 5px;
+        @include color-size($white-color, 15px);
+      }
+      &__message {
+        margin-bottom: 40px;
+        @include color-size($white-color, 11px);
+      }
+    }
+  }
+}
+
+//チャット画面
+.chat-main {
+  background-color: $white-color;
+  width: calc(100vw - 300px);
+  font-weight: bold;
+  &__group-info {  //右上ヘッダー部分
+    background-color: $white-color;
+    height: 100px;
+    border-bottom: 1px solid #eeeeee;
+    padding: 0 40px 0 40px;
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      .header-leftbox {
+        margin-top: 35px;
+        &__group-name {
+          @include color-size(#333333, 20px);
+        }
+        &__group-member {
+          display: flex;
+          margin-top: 15px;
+          @include color-size(#999999, 12px);
+          .list {
+            padding-left: 5px;
+          }
+        }
+      }
+      .header-rightbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 28px 0 32px 0;
+        .edit-account__btn {
+          text-align: center;
+          text-decoration: none;
+          height: 40px;
+          line-height: 40px;
+          width: 72px;
+          border: 1px solid #38aef0;
+          @include color-size(#38aef0, 16px);
+        }
+      }
+    }
+  }
+  &__message-field {  //チャットフィールド
+    background-color: #fafafa;
+    height: calc(100vh - 190px);
+    padding-left: 40px;
+    overflow: scroll;
+    .message {
+      padding: 35px 0 11px 0;
+      .message-user-date {
+        display: flex;
+        .message-user {
+          @include color-size(#333333, 16px);
+        }
+        .message-date {
+          margin-left: 10px;
+          @include color-size(#999999, 12px);
+        }
+      }
+      .message-body {
+        margin-top: 12px;
+        @include color-size(#434a54, 14px);
+      }
+    }
+  }
+  &__message-form {  //チャット送信フォーム
+    background-color: #d2d2d2;
+    height: 90px; 
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .message-form {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      &__body {  //メッセージ入力欄
+        background-color: $white-color;
+        border: none;
+        width: 100%;
+        height: 50px;
+        padding: 0 45px 0 15px;
+      }
+      &__image {  //画像挿入ボタン
+        background-color: $white-color;
+        position: absolute;
+        right: 10px;
+        font-size: 25px;
+        input{
+          display: none;
+        }
+     }
+    }
+    .message-form__sending { //チャット送信ボタン
+      background-color: #38aef0;
+      height: 50px;
+      padding: 0 30px;
+      margin-left: 15px;
+      color: $white-color;
+    }
+  }
+}

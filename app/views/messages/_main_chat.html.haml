@@ -1,0 +1,43 @@
+.chat-main
+  .chat-main__group-info
+    .main-header
+      .header-leftbox
+        .header-leftbox__group-name noke-neko
+        %ul.header-leftbox__group-member
+          Member :
+          %li.list noke
+          %li.list tori
+          %li.list posT
+      .header-rightbox
+        = link_to "#", class: "edit-account__btn" do
+          Edit
+
+  .chat-main__message-field
+    .message
+      .message-user-date
+        .message-user noke
+        .message-date 2020/07/19(sun) 21:08:12
+      .message-body ビリヤードしたい
+    .message
+      .message-user-date
+        .message-user tori
+        .message-date 2020/07/19(sun) 21:10:25
+      .message-body いついこうか
+    .message
+      .message-user-date
+        .message-user noke
+        .message-date 2020/07/19(sun) 21:11:38
+      .message-body 明日いこう
+    .message
+      .message-user-date
+        .message-user posT
+        .message-date 2020/07/19(sun) 21:13:45
+      .message-body posTもいく！
+
+  .chat-main__message-form
+    %form.message-form
+      %input.message-form__body{"placeholder": "type a message", "type": "text"}
+      %label{class: "message-form__image"}
+        = icon('far', 'image')
+        %input{type: "file"}
+    %input.message-form__sending{"name": "commit", "type": "submit", "value": "Send"}
