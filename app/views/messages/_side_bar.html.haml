@@ -5,24 +5,16 @@
         = current_user.name
       %ul.top-items__icons
         %li.list
-        = link_to "#", class: "top-items__crate-group" do
+        = link_to new_group_path, class: "top-items__crate-group" do
           = icon('fas', 'edit', class: "top-items__btn--left")
         %li.list
         = link_to edit_user_path(current_user), class: "top-items__edit-account" do
           = icon('fas', 'cog', class: "top-items__btn--right")
   .side-bar__group-lists
-    .group-list
-      .group-list__name noke-neko
-      .group-list__message nyao
-    .group-list
-      .group-list__name noke-neko
-      .group-list__message piyo
-    .group-list
-      .group-list__name noke-neko
-      .group-list__message drop a letter!
-    .group-list
-      .group-list__name noke-neko
-      .group-list__message nyao
-    .group-list
-      .group-list__name noke-neko
-      .group-list__message piyo
+    - current_user.groups.each do |group|
+      .group-list
+        = link_to '#' do
+          .group-list__name
+            = group.name
+          .group-list__message
+            メッセージはまだありません
