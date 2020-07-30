@@ -56,13 +56,16 @@ $white-color: #ffffff;
     .group-list {
       height: 91px;
       padding: 20px 20px 0px 20px;
-      &__name {
-        margin-bottom: 5px;
-        @include color-size($white-color, 15px);
-      }
-      &__message {
-        margin-bottom: 40px;
-        @include color-size($white-color, 11px);
+      .group-contents {
+        text-decoration: none;
+        &__name {
+          margin-bottom: 5px;
+          @include color-size($white-color, 15px);
+        }
+        &__message {
+          margin-bottom: 40px;
+          @include color-size($white-color, 11px);
+        }
       }
     }
   }
@@ -158,19 +161,23 @@ $white-color: #ffffff;
       &__image {  //画像挿入ボタン
         background-color: $white-color;
         position: absolute;
-        right: 10px;
+        right: 135px;
         font-size: 25px;
         input{
           display: none;
         }
      }
-    }
-    .message-form__sending { //チャット送信ボタン
+     &__sending { //チャット送信ボタン
       background-color: #38aef0;
+      border: none;
       height: 50px;
       padding: 0 30px;
       margin-left: 15px;
       color: $white-color;
+    }
+    }
+    .field_with_errors {
+      width: 100%;
     }
   }
 }
