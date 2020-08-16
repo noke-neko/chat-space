@@ -21,21 +21,21 @@ $(function(){
       return html;
     } else {
       let html = 
-      `<div class="message">
-      <div class="message-user-date">
-        <div class="message-user">
-          ${message.user_name}
-        </div>
-        <div class="message-date">
-          ${message.created_at}
-        </div>
-      </div>
-      <div class="message-body">
-        <p class="Message__content">
-          ${message.content}
-        </p>
-      </div>
-    </div>`
+        `<div class="message">
+          <div class="message-user-date">
+            <div class="message-user">
+              ${message.user_name}
+            </div>
+            <div class="message-date">
+            ${message.created_at}
+            </div>
+          </div>
+          <div class="message-body">
+            <p class="Message__content">
+              ${message.content}
+            </p>
+          </div>
+        </div>`
       return html;
     };
   }
@@ -61,6 +61,6 @@ $(function(){
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
-  });
+    });
   });
 });
